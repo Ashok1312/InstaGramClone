@@ -10,7 +10,7 @@
         <!--Sign In View Controller-->
         <scene sceneID="p7b-xb-MLh">
             <objects>
-                <viewController id="Stx-cr-OZk" customClass="SignInViewController" customModule="InstaGramClone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignInViewController" id="Stx-cr-OZk" customClass="SignInViewController" customModule="InstaGramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oL6-fy-uyG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,6 +204,6 @@
         <image name="placeholderImg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WxE-2K-nFT"/>
+        <segue reference="4iM-dk-7Eo"/>
     </inferredMetricsTieBreakers>
 </document>

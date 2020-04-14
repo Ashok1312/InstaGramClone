@@ -8,9 +8,10 @@
 
 import UIKit
 import FirebaseAuth
+import ProgressHUD
 
 class SignInViewController: UIViewController {
-
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
@@ -26,7 +27,7 @@ class SignInViewController: UIViewController {
         emailBottomLayer.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
         emailBottomLayer.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         emailTextField.layer.addSublayer(emailBottomLayer)
-       
+        
         passwordTextField.backgroundColor = UIColor.clear
         passwordTextField.tintColor = UIColor.white
         passwordTextField.textColor = .white
@@ -37,40 +38,56 @@ class SignInViewController: UIViewController {
         passwordBottomLayer.frame = CGRect(x: 0, y: 29, width: 1000, height: 0.6)
         passwordBottomLayer.backgroundColor = UIColor(red: 50/255, green: 50/255, blue: 25/255, alpha: 1).cgColor
         passwordTextField.layer.addSublayer(passwordBottomLayer)
+        signInButton.isEnabled = false
         
         handleTextField()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if Auth.auth().currentUser != nil{
+            self.performSegue(withIdentifier: "signInToTabbbarVC", sender: nil)
+        }
     }
     
     
     func handleTextField(){
         emailTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange), for: UIControl.Event.editingChanged)
-
+        
     }
     
     @objc func textFieldDidChange(){
-     guard  let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else{
-         signInButton.setTitleColor(UIColor.lightText, for: UIControl.State.normal)
-         signInButton.isEnabled = false
-         return
-     }
+        guard  let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else{
+            signInButton.setTitleColor(UIColor.lightText, for: UIControl.State.normal)
+            return
+        }
         
         signInButton.setTitleColor(UIColor.white, for: UIControl.State.normal)
         signInButton.isEnabled = true
-
-
+        
+        
     }
     
     @IBAction func signInButton_TouchUpInside(_ sender: Any) {
-        Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            if error != nil{
-                print("cgjvmgjhkj.,hjghcjvmjh,jgkhvjcgvmbj,nkjhvjgc\(error!.localizedDescription)")
-                return
-            }
+        view.endEditing(true)
+        ProgressHUD.show("Please wait", interaction: false)
+        AuthService.signIn(email: emailTextField.text!, password: passwordTextField.text!, onSuccess: {
+            ProgressHUD.showSuccess()
             self.performSegue(withIdentifier: "signInToTabbbarVC", sender: nil)
-        }
+
+            
+        }, onError: { error in
+            ProgressHUD.showError(error!)
+            
+        })
+        
     }
     
 }

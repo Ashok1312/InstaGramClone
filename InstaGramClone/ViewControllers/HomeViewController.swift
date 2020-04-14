@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeViewController: UIViewController {
 
@@ -18,6 +19,28 @@ class HomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func logout_TouchUpInside(_ sender: Any) {
+//        if let currentuser = Auth.auth().currentUser?.description{
+//            print("current user is \(currentuser)")
+//        }else{
+//            print("invalid")
+//        }
+        do{
+           try Auth.auth().signOut()
+        }catch{
+            print("logouterror\(error)")
+        }
+//        if let currentuser = Auth.auth().currentUser?.description{
+//                   print("current user is \(currentuser)")
+//               }else{
+//                   print("invalid")
+//               }
+        
+        let storyboard = UIStoryboard(name: "Start", bundle: nil)
+        let signVC = storyboard.instantiateViewController(identifier: "SignInViewController")
+        signVC.modalPresentationStyle = .fullScreen
+        self.present(signVC, animated: true, completion: nil)
+    }
+    
 
 }

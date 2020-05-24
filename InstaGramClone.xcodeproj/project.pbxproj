@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		564A7B1F2430C4B50018B015 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A7B1E2430C4B50018B015 /* CameraViewController.swift */; };
 		564A7B212430C4C20018B015 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A7B202430C4C20018B015 /* ActivityViewController.swift */; };
 		564A7B232430C4D00018B015 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A7B222430C4D00018B015 /* ProfileViewController.swift */; };
+		56801546244606720065E451 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56801545244606720065E451 /* Config.swift */; };
+		569003F624373FA3009293A8 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569003F524373FA3009293A8 /* AuthService.swift */; };
 		56EE40E3242E5471006E575A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EE40E2242E5471006E575A /* SceneDelegate.swift */; };
 		56EE40EA242E5474006E575A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56EE40E9242E5474006E575A /* Assets.xcassets */; };
 		56EE40ED242E5474006E575A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56EE40EB242E5474006E575A /* LaunchScreen.storyboard */; };
@@ -39,6 +41,8 @@
 		564A7B1E2430C4B50018B015 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		564A7B202430C4C20018B015 /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		564A7B222430C4D00018B015 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		56801545244606720065E451 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		569003F524373FA3009293A8 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		56EE40DD242E5471006E575A /* InstaGramClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaGramClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56EE40E0242E5471006E575A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56EE40E2242E5471006E575A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 			children = (
 				56EE40E0242E5471006E575A /* AppDelegate.swift */,
 				56EE40E2242E5471006E575A /* SceneDelegate.swift */,
+				569003F524373FA3009293A8 /* AuthService.swift */,
+				56801545244606720065E451 /* Config.swift */,
 				56EED0992431C08D00281767 /* ViewControllers */,
 				56EED0982431C06700281767 /* StoryBoards */,
 				56EE40E9242E5474006E575A /* Assets.xcassets */,
@@ -143,7 +149,6 @@
 				A6671C298BAEAD8CC4F57581 /* Pods-InstaGramClone.debug.xcconfig */,
 				0DCED8EF0E3FFC74B9C6A01C /* Pods-InstaGramClone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -273,9 +278,11 @@
 				564A7B15242E59A60018B015 /* AppDelegate.swift in Sources */,
 				56EE40E3242E5471006E575A /* SceneDelegate.swift in Sources */,
 				564A7B212430C4C20018B015 /* ActivityViewController.swift in Sources */,
+				56801546244606720065E451 /* Config.swift in Sources */,
 				564A7B1D2430C4930018B015 /* DiscoverViewController.swift in Sources */,
 				564A7B1F2430C4B50018B015 /* CameraViewController.swift in Sources */,
 				564A7B232430C4D00018B015 /* ProfileViewController.swift in Sources */,
+				569003F624373FA3009293A8 /* AuthService.swift in Sources */,
 				564A7B1924307B3A0018B015 /* SignUpViewController.swift in Sources */,
 				564A7B17242E6EC50018B015 /* SignInViewController.swift in Sources */,
 			);

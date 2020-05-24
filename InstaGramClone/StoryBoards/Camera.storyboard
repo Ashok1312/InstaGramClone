@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,16 +12,82 @@
             <objects>
                 <viewController id="XoX-vS-Oyq" customClass="CameraViewController" customModule="InstaGramClone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="l3q-7z-QXK">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kLG-8w-puE">
+                                <rect key="frame" x="0.0" y="44" width="375" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder-photo" translatesAutoresizingMaskIntoConstraints="NO" id="T9S-bc-ngh">
+                                        <rect key="frame" x="8" y="10" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="QE6-rN-3Uj"/>
+                                            <constraint firstAttribute="height" constant="80" id="pHi-5O-ZxO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MqZ-Em-ist">
+                                        <rect key="frame" x="96" y="10" width="271" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MqZ-Em-ist" secondAttribute="trailing" constant="8" id="3iS-SQ-wYb"/>
+                                    <constraint firstAttribute="height" constant="100" id="Lqe-Op-OnC"/>
+                                    <constraint firstItem="T9S-bc-ngh" firstAttribute="top" secondItem="kLG-8w-puE" secondAttribute="top" constant="10" id="UDO-l6-Odk"/>
+                                    <constraint firstItem="T9S-bc-ngh" firstAttribute="leading" secondItem="kLG-8w-puE" secondAttribute="leading" constant="8" id="XHa-oi-Kdc"/>
+                                    <constraint firstItem="MqZ-Em-ist" firstAttribute="leading" secondItem="T9S-bc-ngh" secondAttribute="trailing" constant="8" id="Yo5-58-Njq"/>
+                                    <constraint firstAttribute="bottom" secondItem="T9S-bc-ngh" secondAttribute="bottom" constant="10" id="ax0-AE-Msn"/>
+                                    <constraint firstAttribute="bottom" secondItem="MqZ-Em-ist" secondAttribute="bottom" constant="10" id="fBe-5G-dnF"/>
+                                    <constraint firstItem="MqZ-Em-ist" firstAttribute="top" secondItem="kLG-8w-puE" secondAttribute="top" constant="10" id="tVc-MH-doT"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qg2-9r-YfU">
+                                <rect key="frame" x="8" y="609" width="359" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="n6l-WH-JOK"/>
+                                </constraints>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButton_TouchUpInside:" destination="XoX-vS-Oyq" eventType="touchUpInside" id="ySQ-Rt-6i0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QW7-oc-nbx" firstAttribute="bottom" secondItem="qg2-9r-YfU" secondAttribute="bottom" constant="8" id="0sN-GA-bCZ"/>
+                            <constraint firstItem="kLG-8w-puE" firstAttribute="trailing" secondItem="QW7-oc-nbx" secondAttribute="trailing" id="LUz-ZT-tXM"/>
+                            <constraint firstItem="kLG-8w-puE" firstAttribute="leading" secondItem="QW7-oc-nbx" secondAttribute="leading" id="PnN-04-MDt"/>
+                            <constraint firstItem="QW7-oc-nbx" firstAttribute="trailing" secondItem="qg2-9r-YfU" secondAttribute="trailing" constant="8" id="Yvv-jM-aAJ"/>
+                            <constraint firstItem="kLG-8w-puE" firstAttribute="top" secondItem="QW7-oc-nbx" secondAttribute="top" id="cYV-l8-gxh"/>
+                            <constraint firstItem="qg2-9r-YfU" firstAttribute="leading" secondItem="QW7-oc-nbx" secondAttribute="leading" constant="8" id="hDl-fV-5ZH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="QW7-oc-nbx"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zip-b0-2YA"/>
+                    <navigationItem key="navigationItem" id="zip-b0-2YA">
+                        <barButtonItem key="leftBarButtonItem" title="Remove" id="Wg5-QO-CNR">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="remove_touchUpInside:" destination="XoX-vS-Oyq" id="XZC-By-z8N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextView" destination="MqZ-Em-ist" id="RVx-Hk-MDz"/>
+                        <outlet property="photo" destination="T9S-bc-ngh" id="O30-6Z-Z8g"/>
+                        <outlet property="removeButton" destination="Wg5-QO-CNR" id="ZnQ-qm-03O"/>
+                        <outlet property="shareButton" destination="qg2-9r-YfU" id="sBv-M6-OEy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mD-n1-9pd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2700" y="-1272"/>
+            <point key="canvasLocation" x="2700" y="-1272.4137931034484"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HHs-bA-tUg">
@@ -32,7 +98,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kla-v9-dMd">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -47,5 +113,6 @@
     </scenes>
     <resources>
         <image name="Photo" width="22" height="23"/>
+        <image name="placeholder-photo" width="840" height="600"/>
     </resources>
 </document>
